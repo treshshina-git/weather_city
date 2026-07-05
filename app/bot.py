@@ -1,7 +1,7 @@
 import uuid
 from telegram import InlineQueryResultArticle, InputTextMessageContent
 from telegram.ext import InlineQueryHandler, Application
-
+import Update
 from app.config import BOT_TOKEN
 from app.weather import get_weather, get_forecast
 from app.modes import oracle, scientific, drama
