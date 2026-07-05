@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime, UTC, timedelta
 from app.cache import weather_cache, forecast_cache
 from app.config import WEATHER_API_KEY
 
@@ -12,6 +13,10 @@ def safe_get(url, params):
     except Exception:
         return None
 
+def city_time(offset_seconds: int) -> str:
+    utc_now = datetime.now(UTC)
+    local = utc_now + timedelta(seconds=offset_seconds)
+    return local.strftime("%d.%m.%Y %H:%M")
 
 def get_weather(city):
     key = f"w:{city}"
@@ -38,7 +43,11 @@ def get_weather(city):
         "pressure": data["main"]["pressure"],
         "humidity": data["main"]["humidity"],
         "wind": data["wind"]["speed"],
-        "code": data["weather"][0]["id"]
+        "code": data["weather"][0]["id"],
+        "timezone": data["timezone"],     
+        "sunrise": data["sys"]["sunrise"],
+        "sunset": data["sys"]["sunset"],
+        "timezone": data["timezone"]
     }
 
     weather_cache[key] = result

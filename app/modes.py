@@ -13,6 +13,9 @@ def oracle(t):
 def scientific(w):
     return f"""
 🌍 <b>{w['city']}</b>
+🕒 Сейчас: <b>{city_time(w['timezone'])}</b>
+🌅 Рассвет: <b>{city_time(w['sunrise'])}</b>
+🌇 Закат: <b>{city_time(w['sunset'])}</b>
 🌡 Температура: <b>{w['temp']}°C</b>
 🫧 Ощущается: <b>{w['feels']}°C</b>
 💨 Ветер: <b>{w['wind']} м/с</b>
