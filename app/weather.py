@@ -16,7 +16,7 @@ def safe_get(url, params):
 def city_time(offset_seconds: int) -> str:
     utc_now = datetime.now(UTC)
     local = utc_now + timedelta(seconds=offset_seconds)
-    return local.strftime("%d.%m.%Y %H:%M")
+    return local.strftime("%H:%M")
 
 def get_weather(city):
     key = f"w:{city}"
