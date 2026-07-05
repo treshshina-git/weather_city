@@ -5,8 +5,8 @@ from cachetools import TTLCache
 from telegram import InlineQueryResultArticle, InputTextMessageContent, Update
 from telegram.ext import Application, InlineQueryHandler, ContextTypes
 
-BOT_TOKEN = "1778731276:AAFSX9d9tKslQWEV1gdqyMmfx9P819MzVI8"
-WEATHER_API_KEY = "d5b9bcc8feb66c4b61f7e3bafd1c2ddf"
+BOT_TOKEN = ""
+WEATHER_API_KEY = ""
 
 cache = TTLCache(maxsize=300, ttl=300)
 
