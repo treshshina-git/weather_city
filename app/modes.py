@@ -1,3 +1,4 @@
+from app.weather import city_time
 def oracle(t):
     if t < 0:
         return "мир сжат в ледяной кристалл"
