@@ -10,7 +10,7 @@ from app.modes import oracle, scientific, drama
 def parse(q):
     parts = q.split()
     city = parts[0]
-    mode = parts[1] if len(parts) > 1 else "oracle"
+    mode = parts[1] if len(parts) > 1 else "scientific"
     return city, mode
 
 
