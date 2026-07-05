@@ -44,7 +44,7 @@ async def inline(update, context):
     await update.inline_query.answer([
         InlineQueryResultArticle(
             id=str(uuid.uuid4()),
-            title=f"{w['city']} {w['temp']}°C",
+            title=f"{w['city']} {round(w['temp'])}°C",
             input_message_content=InputTextMessageContent(text)
         )
     ], cache_time=10)
