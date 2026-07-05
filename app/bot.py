@@ -1,5 +1,5 @@
 import uuid
-from telegram import InlineQueryResultArticle, InputTextMessageContent
+from telegram import InlineQueryResultArticle, InputTextMessageContent, Update
 from telegram.ext import InlineQueryHandler, Application
 import Update
 from app.config import BOT_TOKEN
