@@ -10,7 +10,7 @@ from app.modes import oracle, scientific, drama
 def parse(q):
     parts = q.split()
     city = parts[0]
-    mode = parts[1] if len(parts) > 1 else "science"
+    mode = parts[1] if len(parts) > 1 else "drama"
     return city, mode
 
 
@@ -44,7 +44,7 @@ async def inline(update, context):
     await update.inline_query.answer([
         InlineQueryResultArticle(
             id=str(uuid.uuid4()),
-            title=f"{w['city']} ({mode})",
+            title=f"{w['city']}",
             input_message_content=InputTextMessageContent(text)
         )
     ], cache_time=10)
