@@ -13,11 +13,11 @@ def oracle(t):
 def scientific(w):
     return f"""
 🌍 <b>{w['city']}</b>
-🌡 Температура: {w['temp']}°C
-🫧 Ощущается: {w['feels']}°C
-💨 Ветер: {w['wind']} м/с
-🧭 Давление: {w['pressure']} hPa
-💧 Влажность: {w['humidity']}%
+🌡 Температура: <b>{w['temp']}°C</b>
+🫧 Ощущается: <b>{w['feels']}°C</b>
+💨 Ветер: <b>{w['wind']} м/с</b>
+🧭 Давление: <b>{w['pressure']} hPa</b>
+💧 Влажность: <b>{w['humidity']}%</b>
 """
 
 
