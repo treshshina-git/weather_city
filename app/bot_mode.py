@@ -5,6 +5,8 @@ from cachetools import TTLCache
 from telegram import InlineQueryResultArticle, InputTextMessageContent, Update
 from telegram.ext import Application, InlineQueryHandler, ContextTypes
 
+from app.error_handler import error_handler
+
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
@@ -214,6 +216,7 @@ async def inline(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # =========================
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
+    app.add_error_handler(error_handler)
     app.add_handler(InlineQueryHandler(inline))
 
     print("🌩 Weather Modes Bot is alive")
